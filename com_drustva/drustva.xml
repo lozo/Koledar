@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<!-- kak das tu ime se bo potem instaliralo v com_vodici in prav tako mores potem imeti vstopne točke ime  torej site/vodici.php in admin/vodici.php  sumniki odpadejo -->
+	<name>com_drustva</name>
+	<!-- The following elements are optional and free of formatting conttraints -->
+	<creationDate>Januar 2014</creationDate>
+	<author>Robert Lozinšek</author>
+	<authorEmail>robert.lozinsek@gmail.com</authorEmail>
+	<authorUrl>http://www.multimedia.si</authorUrl>
+	<copyright>Vse pravice pridržane</copyright>
+	<license>GPL3</license>
+	<!--  The version string is recorded in the components table -->
+	<version>0.0.1</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>com_drustva_description</description>
+	<!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>drustva.php</filename>
+		<filename>controller.php</filename>
+	</files>
+	<media destination="com_drustva" folder="media">
+	<filename>index.html</filename>
+	<folder>images</folder>
+	<folder>css</folder>
+	<folder>js</folder>
+	</media>
+	<languages folder="language/en-GB">
+		<language tag="en-GB">en-GB.com_drustva.ini</language>
+	</languages>
+	
+	<install>
+	<sql>
+	<file driver="mysql" charset="utf8">install.sql</file>
+	</sql>
+	</install>
+	
+	<uninstall>
+	<sql>
+	<file driver="mysql" charset="utf8">uninstall.sql</file>
+	</sql>
+	</uninstall>
+	
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu link="option=com_drustva" img="../media/com_drustva/images/com_drustva-icon-16x16.png">com_drustva_menu</menu>
+			<!-- PODMENIJI -->
+		<submenu>
+		<menu link="option=com_drustva&amp;task=create" img="../media/com_drustva/images/com_drustva-create-icon-16x16.png">com_drustva_menu_create</menu>
+		<menu link="option=com_drustva&amp;task=listtasK" img="../media/com_drustva/images/com_drustva-list-icon-16x16.png">com_drustva_menu_listtask</menu>
+		<menu link="option=com_drustva&amp;task=help" img="../media/com_drustva/images/com_drustva-delete-icon-16x16.png">com_drustva_menu_help</menu>
+		</submenu>
+		<!-- Administration Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder
+			to copy FROM in the package to install therefore files copied
+			in this section are copied from /admin/ in the package -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>index.html</filename>
+			<filename>drustva.php</filename>
+			<filename>controller.php</filename>
+			<filename>install.sql</filename>
+			<filename>uninstall.sql</filename>
+			<filename>update.sql</filename>
+		</files>
+		<languages folder="admin/language/en-GB">
+			<language tag="en-GB">en-GB.com_drustva.ini</language>
+			<language tag="en-GB">en-GB.com_drustva.sys.ini</language>
+		</languages>
+	</administration>
+
+</extension>
