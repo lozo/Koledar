@@ -10,7 +10,7 @@
 	<copyright>Vse pravice pridržane</copyright>
 	<license>GPL3</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>com_drustva_description</description>
 	<!-- Site Main File Copy Section -->
